@@ -1,8 +1,8 @@
 # React Profile Page
-A clean, responsive personal profile card component built with React and Tailwind CSS. This project creates an attractive profile showcase with theme-switching capabilities and subtle animated background elements.
+A clean, responsive personal profile website built with React and Tailwind CSS.
+
 ## Features
 - Responsive Design: Looks great on all devices from mobile to desktop
-- Theme Switching: Toggle between multiple color themes (slate, teal, amber, indigo)
 - Clean UI: Minimalist card-based design for displaying personal information
 ## Installation
 1. Clone the repository:
@@ -23,3 +23,4 @@ npm start
 
 - React 18+
 - Tailwind CSS 3+
+
