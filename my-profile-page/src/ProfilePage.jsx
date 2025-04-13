@@ -2,53 +2,113 @@
 import React from 'react';
 
 function ProfilePage() {
+  // Single theme with minimalistic colors
+  const theme = {
+    primary: 'bg-slate-700',
+    secondary: 'bg-slate-100',
+    text: 'text-slate-700',
+    hover: 'hover:bg-slate-800',
+    border: 'border-slate-500'
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-md max-w-md w-full p-6">
-        {/* Profile Image */}
-        <div className="flex justify-center mb-4">
-          <img 
-            src="/api/placeholder/150/150" 
-            alt="Profile" 
-            className="rounded-full h-32 w-32 object-cover border-4 border-blue-500"
-          />
+    <div className={`min-h-screen ${theme.secondary} flex flex-col items-center justify-center p-4`}>
+      {/* Main Card */}
+      <div className="bg-white rounded-lg shadow-lg max-w-md w-full overflow-hidden">
+        {/* Header Banner */}
+        <div className={`${theme.primary} h-20 relative`}>
+          <div className="absolute -bottom-14 left-6">
+            <div className={`${theme.border} border-3 rounded-full p-1 bg-white`}>
+              <img 
+                src="/api/placeholder/110/110" 
+                alt="Profile" 
+                className="rounded-full h-28 w-28 object-cover"
+              />
+            </div>
+          </div>
         </div>
         
-        {/* Name */}
-        <h1 className="text-2xl font-bold text-center text-gray-800 mb-2">
-          Devi Dekshina
-        </h1>
-        
-        {/* Bio */}
-        <p className="text-gray-600 text-center mb-4">
-        Hi there! A passionate Computer Science undergraduate at CUSAT, I'm focused on building impactful digital solutions. I enjoy working across the tech stack, with a growing interest in backend systems, full-stack web development, and AI-powered applications. Whether it's a hackathon, a personal project, or collaborative development, I thrive on learning new technologies and solving real-world problems.
-
-Let’s build something awesome together!
-
-
-        </p>
-        
-        {/* Hobbies */}
-        <div className="mb-4">
-          <h2 className="text-xl font-semibold text-gray-700 mb-2">My Hobbies</h2>
-          <ul className="list-disc pl-5 text-gray-600">
-            <li>Coding websites and apps</li>
-            <li>Poetry and short stories</li>
-            <li>Listening to music</li>
-          </ul>
+        {/* Profile Content */}
+        <div className="mt-16 p-6">
+          {/* Name */}
+          <div className="ml-2">
+            <h1 className="text-2xl font-bold text-gray-800">
+              Devi Dekshina
+            </h1>
+            
+            {/* Professional Title */}
+            <p className={`${theme.text} font-medium`}>
+              Computer Science Undergraduate @ CUSAT
+            </p>
+          </div>
+          
+          {/* Bio */}
+          <div className="mt-6">
+            <p className="text-gray-600 leading-relaxed border-l-2 pl-4 py-1 ml-2 border-gray-200">
+              Computer Science student building digital solutions across the tech stack, 
+              with focus on backend systems, full-stack applications, and emerging AI technologies.
+            </p>
+          </div>
+          
+          {/* Hobbies Section - Moved before Skills */}
+          <div className="mt-6 ml-2">
+            <h2 className="text-lg font-semibold text-gray-700 mb-3">
+              Interests & Hobbies
+            </h2>
+            <div className="grid grid-cols-3 gap-3">
+              <div className={`${theme.secondary} rounded-md p-3 text-center`}>
+                <div className="text-xl mb-1">🎵</div>
+                <div className="text-sm font-medium">Music</div>
+              </div>
+              <div className={`${theme.secondary} rounded-md p-3 text-center`}>
+                <div className="text-xl mb-1">📝</div>
+                <div className="text-sm font-medium">Poetry</div>
+              </div>
+              <div className={`${theme.secondary} rounded-md p-3 text-center`}>
+                <div className="text-xl mb-1">🎬</div>
+                <div className="text-sm font-medium">Movies</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Skills Section - Now after Hobbies */}
+          <div className="mt-6 ml-2">
+            <h2 className="text-lg font-semibold text-gray-700 mb-3 flex items-center">
+              Technical Skills
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              <span className={`${theme.secondary} ${theme.text} px-3 py-1 rounded-md text-sm font-medium`}>JavaScript</span>
+              <span className={`${theme.secondary} ${theme.text} px-3 py-1 rounded-md text-sm font-medium`}>React</span>
+              <span className={`${theme.secondary} ${theme.text} px-3 py-1 rounded-md text-sm font-medium`}>Node.js</span>
+              <span className={`${theme.secondary} ${theme.text} px-3 py-1 rounded-md text-sm font-medium`}>Tailwind CSS</span>
+              <span className={`${theme.secondary} ${theme.text} px-3 py-1 rounded-md text-sm font-medium`}>Python</span>
+              <span className={`${theme.secondary} ${theme.text} px-3 py-1 rounded-md text-sm font-medium`}>AI/ML</span>
+            </div>
+          </div>
         </div>
         
-        {/* Social Links - You can add these later */}
-        <div className="flex justify-center space-x-4 mt-6">
-          <a href="#" className="text-blue-500 hover:text-blue-700">
-            <span className="bg-blue-100 rounded-full p-2">📱</span>
-          </a>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
-            <span className="bg-blue-100 rounded-full p-2">📧</span>
-          </a>
-          <a href="#" className="text-blue-500 hover:text-blue-700">
-            <span className="bg-blue-100 rounded-full p-2">💻</span>
-          </a>
+        {/* Footer with Professional Links */}
+        <div className={`${theme.primary} p-4`}>
+          <div className="flex justify-between px-4">
+            <a href="https://github.com" className="text-white hover:text-white/80 transition-colors flex items-center gap-2">
+              <div className="bg-white/20 rounded-md p-2">
+                <span className="text-sm">👾</span>
+              </div>
+              <span className="text-sm font-medium">GitHub</span>
+            </a>
+            <a href="https://linkedin.com" className="text-white hover:text-white/80 transition-colors flex items-center gap-2">
+              <div className="bg-white/20 rounded-md p-2">
+                <span className="text-sm">💼</span>
+              </div>
+              <span className="text-sm font-medium">LinkedIn</span>
+            </a>
+            <a href="mailto:email@example.com" className="text-white hover:text-white/80 transition-colors flex items-center gap-2">
+              <div className="bg-white/20 rounded-md p-2">
+                <span className="text-sm">✉️</span>
+              </div>
+              <span className="text-sm font-medium">Email</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
