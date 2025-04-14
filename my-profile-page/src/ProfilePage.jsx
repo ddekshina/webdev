@@ -117,7 +117,7 @@ function ProfilePage() {
             <div className="absolute -bottom-14 left-6">
               <div className="border-2 border-white rounded-full p-1 bg-white shadow-lg">
                 <img 
-                  src="/api/placeholder/110/110" 
+                  src="/media/profile.png" 
                   alt="Profile" 
                   className="rounded-full h-28 w-28 object-cover"
                 />
